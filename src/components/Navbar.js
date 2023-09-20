@@ -30,7 +30,7 @@ export default function Navbar(props) {
   )
 }
 
-// propTypes used to define the type of properties assigned
+// propTypes used to define the type of properties assigned.
 Navbar.propTypes = {
   title: PropTypes.string,
   about: PropTypes.string,
