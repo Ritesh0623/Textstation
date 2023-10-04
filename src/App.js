@@ -4,7 +4,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import {Routes,BrowserRouter,Route} from 'react-router-dom'
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 
 function App() {
   const [mode, setMode] = useState('light')
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<TextForm heading="Enter Text here" mode={mode} />}/>
         <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
+        {/* <Route path='/contact' element={<Contact/>}/> */}
       </Routes>
       </BrowserRouter>
       {/* <TextForm heading="Enter Text" mode={mode} /> */}
