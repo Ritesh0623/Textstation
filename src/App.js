@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import {Routes,BrowserRouter,Route} from 'react-router-dom'
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -37,12 +37,12 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Navbar title="Text Station" about="About Us" mode={mode} darkModeBtn={darkModeBtn} />
+      <Navbar title="Text Station" about="About Us" contact="Contact" mode={mode} darkModeBtn={darkModeBtn} />
       <Alert alert={alert} />
       <Routes>
         <Route path='/' element={<TextForm heading="Enter Text here" mode={mode} showAlert={showAlert} />}/>
         <Route path='/about' element={<About/>}/>
-        {/* <Route path='/contact' element={<Contact/>}/> */}
+        <Route path='/contact' element={<Contact/>}/>
       </Routes>
       </BrowserRouter>
       {/* <TextForm heading="Enter Text" mode={mode} /> */}
