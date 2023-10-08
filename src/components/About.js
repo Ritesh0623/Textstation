@@ -4,7 +4,8 @@ export default function About(props) {
 
     let aboutStyle = {
         color : props.mode === 'dark'?'white':'black',
-        backgroundColor : props.mode === 'dark'?'#06041b':'white'
+        backgroundColor : props.mode === 'dark'?'#06041b':'white',
+        // filter : 'invert(1)'
     }
     return (
         <>

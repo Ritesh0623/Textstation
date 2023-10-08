@@ -20,9 +20,17 @@ function App() {
     }, 2000);
   };
 
-  const [mode, setMode] = useState('light')
-  
-  const darkModeBtn = () => {
+  const [mode, setMode] = useState('light');
+
+  const removeBodyClasses = () => {
+    document.body.classList.remove('bg-primary'); 
+    document.body.classList.remove('bg-danger'); 
+    document.body.classList.remove('bg-success'); 
+    document.body.classList.remove('bg-warning'); 
+  }
+  const darkModeBtn = (cls) => {
+    removeBodyClasses(); 
+    document.body.classList.add('bg-'+cls); 
     if(mode === 'light'){
       setMode('dark');
       document.body.style.backgroundColor = '#06041b';

@@ -15,7 +15,7 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                <Link className="nav-link" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">{props?.about}</Link>
@@ -24,8 +24,16 @@ export default function Navbar(props) {
                 <Link className="nav-link" to="/contact">{props.contact}</Link>
               </li>
             </ul>
+            <div className='d-flex'>
+              <div className='bg-primary rounded' onClick={() => {props.darkModeBtn('primary')}} style={{border : '2px solid black', height : '30px', width : '30px', cursor : 'pointer', marginRight : '5px'}}></div>
+              <div className='bg-danger rounded' onClick={() => {props.darkModeBtn('danger')}} style={{border : '2px solid black', height : '30px', width : '30px', cursor : 'pointer', marginRight : '5px'}}></div>
+              <div className='bg-success rounded' onClick={() => {props.darkModeBtn('success')}} style={{border : '2px solid black', height : '30px', width : '30px', cursor : 'pointer', marginRight : '5px'}}></div>
+              <div className='bg-warning rounded' onClick={() => {props.darkModeBtn('warning')}} style={{border : '2px solid black', height : '30px', width : '30px', cursor : 'pointer', marginRight : '5px'}}></div>
+              {/* <div className='bg-dark rounded' onClick={() => {props.darkModeBtn('warning')}} style={{border : '2px solid black', height : '30px', width : '30px', cursor : 'pointer', marginRight : '5px'}}></div>
+              <div className='bg-light rounded' onClick={() => {props.darkModeBtn('warning')}} style={{border : '2px solid black', height : '30px', width : '30px', cursor : 'pointer', marginRight : '5px'}}></div> */}
+            </div>
             <div className={`form-check form-switch text-${props.mode === 'light'?'dark':'light'}`}>
-              <input className="form-check-input" onClick={props.darkModeBtn} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+              <input className="form-check-input" onClick={() => {props.darkModeBtn(null)}} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.mode === 'dark'?'light':'dark'} mode</label>
             </div>
           </div>
