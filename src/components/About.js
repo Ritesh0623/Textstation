@@ -1,30 +1,11 @@
-import React, {useState} from 'react'
+import React from "react"
 
-export default function About() {
-    
-    const [aboutStyle, setaboutStyle] = useState({
-        color : 'black',
-        backgroundColor : 'white'
-    });
-    const [btnText, setBtnText] = useState('Dark Mode');
+export default function About(props) {
 
-    const aboutDarkMode = () => {
-        if(aboutStyle.color === 'black'){
-            setaboutStyle({
-                color : 'white',
-                backgroundColor : 'black'
-            });
-            setBtnText('Light Mode');
-        }
-        else{
-            setaboutStyle({
-                color : 'black',
-                backgroundColor : 'white'
-            });
-            setBtnText('Dark Mode');
-        };
-    };
-
+    let aboutStyle = {
+        color : props.mode === 'dark'?'white':'black',
+        backgroundColor : props.mode === 'dark'?'#06041b':'white'
+    }
     return (
         <>
             <div className="container my-5"  style={aboutStyle}>
@@ -67,7 +48,6 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <button className="btn btn-primary my-3" onClick={aboutDarkMode}>{btnText}</button>
             </div>
         </>
     )
